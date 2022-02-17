@@ -93,11 +93,10 @@ export default class Bbs extends Vue {
       this.errorMessage = "投稿内容を入力してください。"
       return;
     }
-    const res = await axios.post("http://153.127.48.168:8080/ex-bbs-api/bbs/article",{
+    await axios.post("http://153.127.48.168:8080/ex-bbs-api/bbs/article",{
       name: this.articleName,
       content: this.articleContent
     })
-    console.log(res.data);
     this.articleName = "";
     this.articleContent = "";
   }
